@@ -128,6 +128,8 @@ if(OQS_ENABLE_KEM_sike_p434 OR
         endif()
     elseif(ARCH_PPC64LE)
         target_compile_definitions(sike PRIVATE _GENERIC_ _PPC64LE_)
+    elseif(ARCH_AVR32)
+        target_compile_definitions(sike PRIVATE _GENERIC_ _AVR32_)
     endif()
 
     if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
@@ -143,7 +145,7 @@ if(OQS_ENABLE_KEM_sike_p434 OR
         # GCC reports warnings about missing const related to how f2elm_t is typedef'd
         # Technically GCC is correct, but we will not raise warnings for these
         if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
-            target_compile_options(sike PRIVATE -Wno-pedantic)
+            #target_compile_options(sike PRIVATE -Wno-pedantic)
             # On GCC 4.9 those warnings can't be turned off, so we disable -Werror
             if(CMAKE_C_COMPILER_VERSION VERSION_LESS "5")
                 target_compile_options(sike PRIVATE -Wno-error)

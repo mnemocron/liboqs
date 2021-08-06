@@ -6,7 +6,8 @@
 #include <string.h>
 #define strcasecmp _stricmp
 #else
-#include <strings.h>
+//#include <strings.h>
+#include <string.h>
 #endif
 
 #include <oqs/oqs.h>

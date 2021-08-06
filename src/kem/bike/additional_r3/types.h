@@ -22,7 +22,7 @@ typedef struct uint128_s {
 } uint128_t;
 
 // Make sure no compiler optimizations.
-#pragma pack(push, 1)
+//#pragma pack(push, 1)
 
 typedef struct seed_s {
   uint8_t raw[SEED_BYTES];
@@ -117,4 +117,4 @@ typedef struct upc_s {
   upc_slice_t slice[SLICES];
 } upc_t;
 
-#pragma pack(pop)
+//#pragma pack(pop)

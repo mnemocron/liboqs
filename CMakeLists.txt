@@ -12,10 +12,6 @@ if(POLICY CMP0063)
     cmake_policy(SET CMP0063 NEW)
 endif()
 
-
-set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
-set(CMAKE_COMPILER_WORKS)
-
 project(liboqs C ASM)
 
 option(OQS_DIST_BUILD "Build distributable library with optimized code for several CPU microarchitectures. Enables run-time CPU feature detection." OFF)
@@ -26,7 +22,7 @@ option(OQS_PERMIT_UNSUPPORTED_ARCHITECTURE "Permit compilation on an an unsuppor
 set(OQS_OPT_TARGET auto CACHE STRING "The target microarchitecture for optimization.")
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
+#set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_C_VISIBILITY_PRESET hidden)
 set(OQS_VERSION_TEXT "0.7.0-rc3")
